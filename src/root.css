@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&family=Roboto:wght@300;400;700&family=Montserrat:wght@300;400;500;600&display=swap");
+
 :root {
-  --background-color: #ffffff;
+  --white-color: #ffffff;
+  --black-color: #000000;
+
+  --links-border-bottom: #0f9;
+
+  --font-nunito: "Nunito", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
 }

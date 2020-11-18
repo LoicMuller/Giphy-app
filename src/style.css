@@ -1,0 +1,21 @@
+@import "./root.css";
+
+.flex {
+  display: flex;
+}
+
+.align_itm_ctr {
+  align-items: center;
+}
+
+.c__pointer {
+  cursor: pointer;
+}
+
+.dark__bg {
+  background-color: var(--black-color);
+}
+
+.text__white {
+  color: var(--white-color);
+}

@@ -7,13 +7,36 @@
 }
 
 body {
-  background-color: black;
+  background-color: var(--white-color);
 }
 
-.__landing {
-  height: 100vh;
-  background-color: var(--background-color);
+/* HEADER */
+.__header {
+  justify-content: space-between;
+  padding: 0 20%;
+  min-height: 70px;
+
+  font-family: var(--font-montserrat);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.__header > div > a {
   display: flex;
   align-items: center;
-  justify-content: center;
+
+  padding: 0 20px;
+  height: 100%;
+
+  color: var(--white-color);
+  text-decoration: none;
+}
+.__header > div > a:hover {
+  background-color: transparent;
+  border-bottom: 4px solid var(--links-border-bottom);
+}
+/* END HEADER */
+
+.__container > h1 {
+  color: black;
 }
