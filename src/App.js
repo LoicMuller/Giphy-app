@@ -1,23 +1,25 @@
-import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Landing from "./components/Landing";
 import Home from "./components/Home";
+import Header from "./components/Header";
+import Welcome from "./components/Welcome";
+import LoggedInHeader from "./components/LoggedInHeader";
+import { useState } from "react";
 
 const App = () => {
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(true);
-    }, 2000);
-  }, []);
-
+  const [loggedIn, setLoggedIn] = useState(false);
   return (
     <Router>
+      {loggedIn ? (
+        <LoggedInHeader setLoggedIn={setLoggedIn} />
+      ) : (
+        <Header setLoggedIn={setLoggedIn} />
+      )}
       <Switch>
-        <Route exact path="/">
-          {loading ? <Home /> : <Landing />}
-        </Route>
+        {loggedIn ? (
+          <Route exact path="/" component={Welcome} />
+        ) : (
+          <Route exact path="/" component={Home} />
+        )}
       </Switch>
     </Router>
   );
