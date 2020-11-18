@@ -31,13 +31,16 @@ body {
   color: var(--white-color);
   text-decoration: none;
 }
-.__header > div > a:focus {
-  outline: var(--outline-focus);
-}
+
 .__header > div > a:hover {
   background-color: transparent;
   border-bottom: 4px solid var(--links-border-bottom);
 }
+
+.__header > div > a:focus:not(:active) {
+  outline: var(--outline-focus);
+}
+
 /* END NAVBAR */
 
 .__container > h1 {
