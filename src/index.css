@@ -10,7 +10,7 @@ body {
   background-color: var(--white-color);
 }
 
-/* HEADER */
+/* NAVBAR */
 .__header {
   justify-content: space-between;
   padding: 0 20%;
@@ -31,11 +31,14 @@ body {
   color: var(--white-color);
   text-decoration: none;
 }
+.__header > div > a:focus {
+  outline: var(--outline-focus);
+}
 .__header > div > a:hover {
   background-color: transparent;
   border-bottom: 4px solid var(--links-border-bottom);
 }
-/* END HEADER */
+/* END NAVBAR */
 
 .__container > h1 {
   color: black;
