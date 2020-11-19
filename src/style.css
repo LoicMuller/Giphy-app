@@ -4,6 +4,10 @@
   display: flex;
 }
 
+.fd_col {
+  flex-direction: column;
+}
+
 .align_itm_ctr {
   align-items: center;
 }
@@ -18,4 +22,30 @@
 
 .text__white {
   color: var(--white-color);
+}
+
+.input {
+  cursor: text;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  text-align: start;
+
+  outline: none;
+  border: 1px solid var(--auth-border-color);
+}
+
+.btn {
+  cursor: pointer;
+  padding: 5px 12px;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+
+  outline: none;
+  border: 1px solid;
+  border-radius: 6px;
 }
