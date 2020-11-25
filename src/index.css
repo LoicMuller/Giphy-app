@@ -208,6 +208,12 @@ body {
 .box > a > img {
   height: 100%;
   width: 100%;
+
+  transition: 0.3s ease;
+}
+
+.box > a > img:hover {
+  filter: opacity(50%);
 }
 
 .box > div {
@@ -227,8 +233,7 @@ body {
   transform: scale(1.15);
 }
 
-.__icons,
-.__icons > i > input {
+.__icons {
   display: none;
 }
 
@@ -246,19 +251,25 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background: rgb(0, 0, 0, 0.8);
 }
 
 .modal {
+  font-family: var(--font-roboto);
   position: relative;
-  background-color: purple;
+  background-color: var(--black-color);
+  color: var(--white-color);
+
   width: 50%;
   height: 50%;
+  padding: 0 100px;
+  justify-content: center;
+  text-align: center;
 }
 
-.modal > div {
+.__close-btn {
   position: absolute;
   cursor: pointer;
   top: 10px;
@@ -266,7 +277,34 @@ body {
   font-size: 32px;
 }
 
-.__container .blur {
-  filter: blur(5px);
+.modal > h1 {
+  margin-bottom: 50px;
 }
+
+.__btn-grp {
+  display: flex;
+}
+
+.__btn-grp > button {
+  margin-left: 20px;
+  font-size: 14px;
+  color: var(--white-color);
+  background-color: var(--green-button-color);
+  border-color: var(--dark-grayish-color);
+}
+
+.__btn-grp > button > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.__btn-grp > button:hover {
+  background-color: var(--green-button-hover-color);
+}
+
+.__btn-grp > button:focus {
+  box-shadow: var(--focus-shadow-button-color);
+  border-color: var(--dark-grayish-color);
+}
+
 /* END MODAL */
