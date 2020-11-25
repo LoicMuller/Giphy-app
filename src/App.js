@@ -6,20 +6,15 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Header from "./components/Header";
 import Welcome from "./components/Welcome";
-import LoggedInHeader from "./components/LoggedInHeader";
-import Login from "./components/Login";
-import Register from "./components/Register";
-import PasswordReset from "./components/PasswordReset";
+import Login from "./components/Authentication/Login";
+import Register from "./components/Authentication/Register";
+import PasswordReset from "./components/Authentication/PasswordReset";
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   return (
     <Router>
-      {loggedIn ? (
-        <LoggedInHeader setLoggedIn={setLoggedIn} />
-      ) : (
-        <Header setLoggedIn={setLoggedIn} />
-      )}
+      <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       <div className="app__container">
         <Switch>
           {loggedIn ? (
@@ -27,8 +22,12 @@ const App = () => {
           ) : (
             <Route exact path="/" component={Home} />
           )}
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={Register} />
+          <Route path="/login">
+            <Login setLoggedIn={setLoggedIn} />
+          </Route>
+          <Route path="/signup">
+            <Register setLoggedIn={setLoggedIn} />
+          </Route>
           <Route path="/password_reset" component={PasswordReset} />
         </Switch>
       </div>
