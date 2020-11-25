@@ -160,9 +160,23 @@ body {
 
 /* END REGISTER */
 
-/* RESET PASSWORD */
+/* ERRORS / SUCCESS */
 
-/* END RESET PASSWORD */
+.error-container {
+  padding: 20px;
+  margin-bottom: 20px;
+  color: var(--red-color);
+  border: 1px solid var(--red-color);
+}
+
+.success-container {
+  padding: 20px;
+  margin-bottom: 20px;
+  color: var(--green-button-color);
+  border: 1px solid var(--green-button-color);
+}
+
+/* END ERRORS / SUCCESS */
 
 /* ------END AUTHENTICATION------ */
 
