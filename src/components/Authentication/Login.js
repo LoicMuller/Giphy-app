@@ -38,7 +38,7 @@ const Login = ({ setLoggedIn }) => {
   return (
     <div className="auth-container">
       <h1 className="__title">Sign in to GIPHY</h1>
-      {error !== null && <div>{error}</div>}
+      {error !== null && <div className="error-container">{error}</div>}
       <form
         className="__auth-form"
         onSubmit={(e) => signIn(e, email, password)}

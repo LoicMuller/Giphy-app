@@ -54,7 +54,7 @@ const Register = ({ setLoggedIn }) => {
   return (
     <div className="auth-container register">
       <h1 className="__title">Sign up to GIPHY</h1>
-      {error !== null && <div>{error}</div>}
+      {error !== null && <div className="error-container">{error}</div>}
       <form
         className="__auth-form"
         onSubmit={(e) => signUp(e, email, password, confirmPass)}

@@ -25,24 +25,22 @@ const PasswordReset = () => {
         setEmailHasBeenSent(true);
         setTimeout(() => {
           history.push("/");
-        }, 2000);
+        }, 3000);
       })
       .catch((error) => {
         setError(error.message);
       });
-
-    // setEmail("");
   };
 
   return (
     <div className="password-reset auth-container">
       <h1 className="__title">Reset your password</h1>
       {emailHasBeenSent && (
-        <div>
+        <div className="success-container">
           An email has been sent to <strong>{email}</strong>
         </div>
       )}
-      {error !== null && <div>{error}</div>}
+      {error !== null && <div className="error-container">{error}</div>}
       <form className="__auth-form" onSubmit={(e) => sendResetEmail(e)}>
         <div className="flex fd_col">
           <label htmlFor="password_reset">
