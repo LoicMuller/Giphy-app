@@ -60,3 +60,7 @@
 .stop-scrolling {
   overflow: hidden;
 }
+
+button:disabled {
+  cursor: not-allowed;
+}
