@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "../../Firebase/firebase";
 
-const Register = ({ setLoggedIn }) => {
+const Register = () => {
   const history = useHistory();
 
   const [email, setEmail] = useState("");
@@ -16,7 +16,6 @@ const Register = ({ setLoggedIn }) => {
     auth
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
-        setLoggedIn(true);
         history.push("/");
       })
       .catch((error) => {
