@@ -5,10 +5,10 @@ import axios from "axios";
 const Home = () => {
   const [modal, setModal] = useState(false);
   const [apiTrendData, setApiTrendData] = useState([]);
+  const [error, setError] = useState(null);
 
   const API_KEY = "lYY4eyVwJ7nx1aawRTIfSw1HLV1H0jQP";
   const TRENDING_API_URL = `https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=15&rating=g`;
-  // const SEARCH_API_URL = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${query}&limit=10&offset=0&rating=g&lang=en`;
 
   useEffect(() => {
     axios
@@ -19,6 +19,7 @@ const Home = () => {
       })
       .catch((err) => {
         console.log(err.message);
+        setError(err.message);
       });
   }, [TRENDING_API_URL]);
 
@@ -57,6 +58,7 @@ const Home = () => {
       <div className="__container">
         <h1>Trending</h1>
         <hr />
+        {error !== null && <div>{error}</div>}
         <div className="wrapper">
           {apiTrendData.map((data) => (
             <div className="box" key={data.id}>
