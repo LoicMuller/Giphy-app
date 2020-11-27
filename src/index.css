@@ -226,11 +226,13 @@ body {
   transition: 0.3s ease;
 }
 
-.box > a > img:hover {
+.box > a > img:hover,
+.box2 > a > img:hover {
   filter: opacity(50%);
 }
 
-.box > div {
+.box > div,
+.box2 > div {
   position: absolute;
   top: 5px;
   right: 10px;
@@ -376,3 +378,37 @@ body {
 }
 
 /* END FETCH DATA */
+
+/* TRENDING SLIDESHOW */
+
+.trends__container > hr {
+  margin: 10px 0 20px 0;
+}
+
+.wrapper2 {
+  background-color: var(--black-color);
+  display: flex;
+  align-items: center;
+
+  padding: 20px;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+.box2 {
+  position: relative;
+  margin: 20px 50px;
+}
+
+.box2 > a > img {
+  width: 1fr;
+  height: 250px;
+
+  transition: 0.3s ease;
+}
+
+.box2:hover .__icons {
+  display: block;
+}
+
+/* END TRENDING SLIDESHOW */
