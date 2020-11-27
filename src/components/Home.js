@@ -18,7 +18,6 @@ const Home = () => {
         setApiTrendData(gifsItemsArray);
       })
       .catch((err) => {
-        console.log(err.message);
         setError(err.message);
       });
   }, [TRENDING_API_URL]);
@@ -43,10 +42,14 @@ const Home = () => {
         </div>
         <div className="__btn-grp">
           <button className="btn">
-            <Link to="/login">Log In</Link>
+            <Link to="/login" onClick={closeModal}>
+              Log In
+            </Link>
           </button>
           <button className="btn">
-            <Link to="/signup">Sign Up</Link>
+            <Link to="/signup" onClick={closeModal}>
+              Sign Up
+            </Link>
           </button>
         </div>
       </div>
