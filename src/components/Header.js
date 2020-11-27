@@ -23,12 +23,6 @@ const Header = ({ loggedIn }) => {
     </Link>
   );
 
-  const trendingBtn = loggedIn && (
-    <Link title="Click here to see the trends" to="/trends">
-      Trendings
-    </Link>
-  );
-
   const collectionBtn = loggedIn && (
     <Link title="Click here to access your collection" to="/collection">
       Collection
@@ -55,7 +49,6 @@ const Header = ({ loggedIn }) => {
       <div className="flex align_itm_ctr">
         {signInBtn}
         {signUpBtn}
-        {trendingBtn}
         {collectionBtn}
         {signOutBtn}
       </div>
