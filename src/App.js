@@ -11,7 +11,7 @@ import Login from "./components/Authentication/Login";
 import Register from "./components/Authentication/Register";
 import PasswordReset from "./components/Authentication/PasswordReset";
 import Collection from "./containers/Collection";
-import Trendings from "./components/Trendings";
+import ErrorPage from "./components/ErrorPage";
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -39,7 +39,6 @@ const App = () => {
     <>
       <Route exact path="/" component={Welcome} />
       <Route path="/collection" component={Collection} />
-      <Route path="/trends" component={Trendings} />
     </>
   ) : (
     <Route exact path="/" component={Home} />
@@ -54,6 +53,7 @@ const App = () => {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Register} />
           <Route path="/password_reset" component={PasswordReset} />
+          <Route component={ErrorPage} />
         </Switch>
       </div>
     </Router>
