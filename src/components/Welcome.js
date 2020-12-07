@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const Welcome = () => {
+const Welcome = ({ setSavedItems }) => {
   const [query, setQuery] = useState("");
   const [displayQuery, setDisplayQuery] = useState("");
   const [fetchedData, setFetchedData] = useState([]);
@@ -19,6 +19,7 @@ const Welcome = () => {
       .then((res) => {
         const gifsItemsArray = res.data.data;
         setApiTrendData(gifsItemsArray);
+        console.log(res.data.data);
       })
       .catch((err) => {
         setTrendError(err.message);

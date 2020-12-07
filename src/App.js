@@ -14,6 +14,8 @@ import Collection from "./containers/Collection";
 import ErrorPage from "./components/ErrorPage";
 
 const App = () => {
+  const [savedItems, setSavedItems] = useState([]);
+
   const [loggedIn, setLoggedIn] = useState(false);
   const [firebaseProcess, setFirebaseProcess] = useState(true);
 
@@ -37,8 +39,12 @@ const App = () => {
 
   const loggedInComponents = loggedIn ? (
     <>
-      <Route exact path="/" component={Welcome} />
-      <Route path="/collection" component={Collection} />
+      <Route exact path="/">
+        <Welcome setSavedItems={setSavedItems} />
+      </Route>
+      <Route path="/collection">
+        <Collection savedItems={savedItems} />
+      </Route>
     </>
   ) : (
     <Route exact path="/" component={Home} />
